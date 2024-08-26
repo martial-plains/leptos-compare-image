@@ -1,4 +1,3 @@
-#![warn(clippy::pedantic)]
 use std::{cell::RefCell, option::Option, rc::Rc};
 
 use derive_more::derive::Display;
