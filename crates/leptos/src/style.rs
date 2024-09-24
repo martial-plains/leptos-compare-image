@@ -79,8 +79,6 @@ pub fn create_styles<'a>(
             .collect::<HashMap<String, String>>()
     });
 
-    let left_image_css = None;
-
     let right_image_css = right_image_css.map(|css| {
         css.as_nameless_value_string()
             .unwrap_or_default()
@@ -92,8 +90,6 @@ pub fn create_styles<'a>(
             .map(|(key, value)| (key.to_string(), value.to_string()))
             .collect::<HashMap<String, String>>()
     });
-
-    let right_image_css = None;
 
     let container = container(container_height);
 
