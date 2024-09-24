@@ -4,7 +4,8 @@ edition = "2021"
 authors = ["Allister Isaiah Harvey"]
 
 [workspace]
-members = ["crates/*"]
+resolver = "2"
+members = ["crates/*", "crates/*/examples/*"]
 
 
 [workspace.dependencies]
