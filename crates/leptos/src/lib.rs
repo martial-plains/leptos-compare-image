@@ -5,8 +5,8 @@ use ev::{MouseEvent, TouchEvent};
 use html::{Div, Img};
 use leptos::{
     component, create_effect, create_node_ref, create_rw_signal, create_signal, ev, html, view,
-    window, window_event_listener, AttributeValue, CollectView, HtmlElement, IntoAttribute,
-    IntoView, NodeRef, SignalGet, SignalSet,
+    window, window_event_listener, AttributeValue, Callable, Callback, CollectView, HtmlElement,
+    IntoAttribute, IntoView, NodeRef, SignalGet, SignalSet,
 };
 use leptos_use::{use_event_listener, use_resize_observer};
 use style::create_styles;
@@ -35,7 +35,7 @@ pub fn LeptosCompareImage(
     #[prop(default = String::new(), into)] left_image_alt: String,
     #[prop(default = None, into)] left_image_css: Option<AttributeValue>,
     #[prop(default = None, into)] left_image_label: Option<String>,
-    #[prop(default = None, into)] on_slider_position_change: Option<fn(f64)>,
+    #[prop(default = None)] on_slider_position_change: Option<Callback<f64>>,
     #[prop(into)] right_image: String,
     #[prop(default = String::new(), into)] right_image_alt: String,
     #[prop(default = None, into)] right_image_css: Option<AttributeValue>,
@@ -143,9 +143,12 @@ pub fn LeptosCompareImage(
 
             if let Some(on_slider_position_change) = on_slider_position_change {
                 if horizontal {
-                    on_slider_position_change(pos / container_width.get());
+                    leptos::Callable::call(&on_slider_position_change, pos / container_width.get());
                 } else {
-                    on_slider_position_change(pos / container_height.get());
+                    leptos::Callable::call(
+                        &on_slider_position_change,
+                        pos / container_height.get(),
+                    );
                 }
             }
         };
@@ -193,9 +196,9 @@ pub fn LeptosCompareImage(
 
             if let Some(on_slider_position_change) = on_slider_position_change {
                 if horizontal {
-                    on_slider_position_change(pos / container_width.get());
+                    Callable::call(&on_slider_position_change, pos / container_width.get());
                 } else {
-                    on_slider_position_change(pos / container_height.get());
+                    Callable::call(&on_slider_position_change, pos / container_height.get());
                 }
             }
         };

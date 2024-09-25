@@ -7,6 +7,9 @@ edition = "2021"
 name = "basic_usage"
 path = "src/basic_usage.rs"
 
+[[bin]]
+name = "detect_slider_position_change"
+path = "src/detect_slider_position_change.rs"
 
 [[bin]]
 name = "hover"
