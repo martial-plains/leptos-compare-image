@@ -17,11 +17,11 @@ name = "show_labels"
 path = "src/show_labels.rs"
 
 [dependencies]
-console_error_panic_hook = "0.1.7"
-console_log = "1.0.0"
+console_error_panic_hook = { workspace = true }
+console_log = { workspace = true }
 leptos = { workspace = true, features = ["csr"] }
 leptos-compare-image = { path = "../../" }
-log = "0.4.22"
+log = { workspace = true }
 
 [features]
 basic_usage = []

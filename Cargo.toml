@@ -9,8 +9,11 @@ members = ["crates/*", "crates/*/examples/*"]
 
 
 [workspace.dependencies]
+console_error_panic_hook = "0.1.7"
+console_log = "1.0.0"
 derive_more = "1.0.0"
 itertools = "0.13.0"
 leptos = "0.6.14"
+log = "0.4.22"
 leptos-use = "0.13.0"
 web-sys = "0.3.70"
