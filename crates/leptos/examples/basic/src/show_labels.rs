@@ -11,9 +11,9 @@ pub fn main() {
         view! {
             <div style="max-width: 640px;">
                 "horizontal"
-                <LeptosCompareImage left_image=img1_src left_image_label=Some("Before".to_string()) right_image=img2_src right_image_label=Some("After".to_string()) hover=true />
+                <LeptosCompareImage left_image=img1_src left_image_label=Some("Before".to_string()) right_image=img2_src right_image_label=Some("After".to_string()) />
                  "vertical"
-                <LeptosCompareImage left_image=img1_src left_image_label=Some("Before".to_string()) right_image=img2_src right_image_label=Some("After".to_string()) hover=true vertical=true />
+                <LeptosCompareImage left_image=img1_src left_image_label=Some("Before".to_string()) right_image=img2_src right_image_label=Some("After".to_string()) vertical=true />
             </div>
         }
     })
